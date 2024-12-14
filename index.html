@@ -11,7 +11,8 @@
       <h1>💡 Exercícios | JavaScript 🚀</h1>
       <nav aria-label="Menu principal">
         <ul>
-          <li><a href="#exercicio1">Reinvente o Título</a></li>
+          <li><a href="#exercicio1">Dê um toque especial</a></li>
+          <li><a href="#exercicio2">Verificação de Votação</a></li>
         </ul>
       </nav>
     </header>
@@ -43,6 +44,42 @@
             ✨ Transformar Título
           </button>
         </form>
+      </section>
+
+      <section id="exercicio2" aria-labelledby="titulo-ex2">
+        <h2 id="titulo-ex2">🗳️ Exercício 2: Aptidão para Votar</h2>
+        <p>Informe seu nome e idade para verificar sua aptidão para votar.</p>
+        
+        <form id="formVotacao">
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input 
+              type="text" 
+              id="nome" 
+              placeholder="Digite seu nome" 
+              aria-label="Campo para digitar seu nome"
+              required
+            />
+          </div>
+          
+          <div class="form-group">
+            <label for="idade">Idade:</label>
+            <input 
+              type="number" 
+              id="idade" 
+              placeholder="Digite sua idade" 
+              aria-label="Campo para digitar sua idade"
+              required
+            />
+          </div>
+          
+          <button type="button" onclick="verificarAptidao()" aria-label="Clique para verificar se pode votar">
+            Verificar
+          </button>
+        </form>
+
+        <h3>Resultado:</h3>
+        <p id="resultado" aria-live="polite"></p>
       </section>
     </main>
 
