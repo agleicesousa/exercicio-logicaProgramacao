@@ -55,7 +55,7 @@ function criarAlunos() {
 
 function calcularMedias() {
   const resultadosDiv = document.getElementById("resultados");
-  resultadosDiv.innerHTML = "🔮 Calculando... Prepara-se para as revelações!";
+  resultadosDiv.innerHTML = "🔮 Calculando... Prepare-se para as revelações!";
 
   setTimeout(() => {
     let somaGeral = 0;
@@ -76,4 +76,24 @@ function calcularMedias() {
       somaGeral / 5
     } 🌟</h3>`;
   }, 1000);
+}
+
+function calcularDesconto() {
+  const valorInicial = parseFloat(
+    document.getElementById("valorInicial").value
+  );
+  let desconto = 0;
+
+  if (valorInicial <= 100) {
+    desconto = 0.1;
+  } else if (valorInicial > 100 && valorInicial <= 500) {
+    desconto = 0.2;
+  } else if (valorInicial > 500) {
+    desconto = 0.3;
+  }
+
+  const valorFinal = valorInicial - valorInicial * desconto;
+  document.getElementById(
+    "resultadoDesconto"
+  ).innerText = `🪄 O valor final com desconto é: R$ ${valorFinal.toFixed(2)}`;
 }
