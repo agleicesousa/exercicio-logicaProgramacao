@@ -2,7 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   criarAlunos();
 });
 
-/** Exercício 1: Alterando Títulos */
+/**
+ * Altera o título com estilo, adicionando um toque de criatividade.
+ *
+ * @function alterarTitulo
+ * @returns {undefined}
+ */
 function alterarTitulo() {
   const inputTitulo = document.getElementById("inputTitulo").value.trim();
   const titulo = document.getElementById("titulo");
@@ -15,7 +20,16 @@ function alterarTitulo() {
   }
 }
 
-/** Exercício 2: Verificando aptidão para votar */
+
+
+/**
+ * Verifica a aptidão para votar com base na idade fornecida.
+ * 
+ * Obtém o nome e a idade do usuário a partir dos campos de entrada 
+ * e exibe uma mensagem sobre a capacidade de votar do usuário.
+ * 
+ * @returns {undefined}
+ */
 function verificarAptidao() {
   const nome = document.getElementById("nome").value.trim();
   const idade = parseInt(document.getElementById("idade").value);
@@ -40,7 +54,17 @@ function verificarAptidao() {
   resultado.textContent = mensagem;
 }
 
-/** Exercício 3: Criar Alunos e Calcular Médias */
+
+/**
+ * Cria entradas de formulário para cadastro de alunos e suas notas.
+ * 
+ * Adiciona ao elemento com id "alunos" um conjunto de 5 divisões, 
+ * cada uma contendo campos de entrada para o nome do aluno e 
+ * três notas. Os ids dos campos de entrada são gerados dinamicamente 
+ * para cada aluno, permitindo a identificação individual.
+ * 
+ * @returns {undefined}
+ */
 function criarAlunos() {
   const alunosDiv = document.getElementById("alunos");
   alunosDiv.innerHTML = "";
@@ -58,6 +82,16 @@ function criarAlunos() {
   }
 }
 
+/**
+ * Calcula e exibe as médias das notas de alunos cadastrados.
+ *
+ * Para cada aluno, três notas são obtidas e a média é calculada.
+ * As médias individuais e a média geral da turma são exibidas no
+ * elemento com id "resultados". Uma animação de carregamento é
+ * apresentada antes do cálculo.
+ *
+ * @returns {undefined}
+ */
 function calcularMedias() {
   const resultadosDiv = document.getElementById("resultados");
   resultadosDiv.innerHTML = "🔮 Calculando...";
@@ -84,7 +118,20 @@ function calcularMedias() {
   }, 1000);
 }
 
-/** Exercício 4: Calculadora de Descontos */
+
+/**
+ * Calcula o valor final após aplicar um desconto baseado no valor inicial.
+ *
+ * Obtém o valor inicial a partir do campo de entrada com id "valorInicial"
+ * e aplica um desconto percentual conforme a faixa do valor:
+ * - 10% para valores até R$ 100
+ * - 20% para valores entre R$ 101 e R$ 500
+ * - 30% para valores acima de R$ 500
+ *
+ * O resultado é exibido no elemento com id "resultadoDesconto".
+ *
+ * @returns {undefined}
+ */
 function calcularDesconto() {
   const valorInicial = parseFloat(
     document.getElementById("valorInicial").value
@@ -101,7 +148,16 @@ function calcularDesconto() {
   ).innerText = `🪄 O valor final com desconto é: R$ ${desconto.toFixed(2)}`;
 }
 
-/** Exercício 5: Calculadora de IMC */
+
+/**
+ * Calcula o Índice de Massa Corporal (IMC) com base no peso e altura fornecidos.
+ *
+ * Obtém o peso e altura dos campos de entrada correspondentes, calcula o IMC
+ * e determina a classificação de peso (abaixo da média, saudável, acima da média).
+ * Em seguida, exibe o resultado no elemento com id "resultadoIMC".
+ *
+ * @returns {undefined}
+ */
 function calcularIMC() {
   const peso = parseFloat(document.getElementById("peso").value);
   const altura = parseFloat(document.getElementById("altura").value);
@@ -128,7 +184,15 @@ function calcularIMC() {
   )} - ${classificacao}`;
 }
 
-/** Exercício 6: Manipulação com Arrays */
+
+/**
+ * Executa o exercício 6.
+ *
+ * Mostra o array inicial, o maior e menor valor, o array
+ * após adicionar um sexto valor e a média dos valores.
+ *
+ * @returns {undefined}
+ */
 function executarExercicio6() {
   const resultadoDiv = document.getElementById("resultadoExercicio6");
 
