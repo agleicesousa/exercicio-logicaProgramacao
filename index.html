@@ -4,91 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Exercícios | JavaScript</title>
+    <title>Exercícios JavaScript</title>
   </head>
   <body>
     <header>
-      <h1>💡 Exercícios | JavaScript 🚀</h1>
-      <nav aria-label="Menu principal">
+      <h1>💡 Exercícios JavaScript Divertidos 🚀</h1>
+      <nav>
         <ul>
-          <li><a href="#exercicio1">Dê um toque especial</a></li>
-          <li><a href="#exercicio2">Verificação de Votação</a></li>
+          <li><a href="#exercicio1">✨ Transformando Títulos</a></li>
+          <li><a href="#exercicio2">🗳️ Checando Votação</a></li>
+          <li><a href="#exercicio3">📚 Notas e Médias</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section id="exercicio1" aria-labelledby="titulo-ex1">
-        <h2 id="titulo-ex1">🖌️ Exercício 1: Dê um toque especial</h2>
-        <h3 id="titulo">✨ Título Brilhante (ou não tão brilhante!)</h3>
-        <p>
-          Você tem a missão de criar um novo título para este exercício. Solte a
-          imaginação! 💭
-        </p>
-
-        <form>
-          <label for="inputTitulo">Qual será o novo título?</label>
-          <input
-            id="inputTitulo"
-            type="text"
-            placeholder="Exemplo: O Melhor Título do Mundo!"
-            aria-label="Campo para você criar um novo título"
-            required
-          />
-
-          <button
-            id="botao"
-            type="button"
-            aria-label="Clique para salvar o novo título"
-          >
-            ✨ Transformar Título
-          </button>
-        </form>
+      <!-- Exercício 1: Transformando Títulos -->
+      <section id="exercicio1">
+        <h2>✨ Transforme seu título com estilo!</h2>
+        <input id="inputTitulo" placeholder="Digite algo criativo..." />
+        <button onclick="alterarTitulo()">🎨 Transformar</button>
+        <h3 id="titulo" class="brilhante">
+          🔮 Seu título mágico aparecerá aqui!
+        </h3>
       </section>
 
-      <section id="exercicio2" aria-labelledby="titulo-ex2">
-        <h2 id="titulo-ex2">🗳️ Exercício 2: Aptidão para Votar</h2>
-        <p>Informe seu nome e idade para verificar sua aptidão para votar.</p>
-        
-        <form id="formVotacao">
-          <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input 
-              type="text" 
-              id="nome" 
-              placeholder="Digite seu nome" 
-              aria-label="Campo para digitar seu nome"
-              required
-            />
-          </div>
-          
-          <div class="form-group">
-            <label for="idade">Idade:</label>
-            <input 
-              type="number" 
-              id="idade" 
-              placeholder="Digite sua idade" 
-              aria-label="Campo para digitar sua idade"
-              required
-            />
-          </div>
-          
-          <button type="button" onclick="verificarAptidao()" aria-label="Clique para verificar se pode votar">
-            Verificar
-          </button>
-        </form>
+      <!-- Exercício 2: Verificando aptidão para votar -->
+      <section id="exercicio2">
+        <h2>🗳️ Hora da Verdade! Você pode votar?</h2>
+        <input id="nome" placeholder="Digite seu nome..." />
+        <input type="number" id="idade" placeholder="Digite sua idade..." />
+        <button onclick="verificarAptidao()">🕊️ Verificar</button>
+        <p id="resultado" aria-live="polite" class="resultado">🔍 Aguarde...</p>
+      </section>
 
-        <h3>Resultado:</h3>
-        <p id="resultado" aria-live="polite"></p>
+      <!-- Exercício 3: Cadastro de Notas -->
+      <section id="exercicio3">
+        <h2>📚 Cadastro de Notas e Análise</h2>
+        <div id="alunos"></div>
+        <button onclick="calcularMedias()">🎉 Calcular Médias</button>
+        <div id="resultados"></div>
       </section>
     </main>
 
     <footer>
       <p>
-        🌟 Criado com 💙 por
-        <a href="#" target="_blank" aria-label="Saiba mais sobre Agleice Sousa"
-          >Agleice Sousa</a
-        >
+        🚀 Criado com 💙 por
+        <a href="#">Agleice Sousa</a>
       </p>
     </footer>
 
