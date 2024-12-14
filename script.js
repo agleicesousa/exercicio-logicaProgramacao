@@ -3,9 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Altera o título com estilo, adicionando um toque de criatividade.
+ * Altera o título com um toque de criatividade.
  *
- * @function alterarTitulo
+ * Atualiza o conteúdo do elemento com id "titulo" com base no input do usuário.
+ * Exibe um alerta com uma mensagem específica após a transformação.
+ *
  * @returns {undefined}
  */
 function alterarTitulo() {
@@ -20,14 +22,12 @@ function alterarTitulo() {
   }
 }
 
-
-
 /**
- * Verifica a aptidão para votar com base na idade fornecida.
- * 
- * Obtém o nome e a idade do usuário a partir dos campos de entrada 
- * e exibe uma mensagem sobre a capacidade de votar do usuário.
- * 
+ * Verifica a aptidão para votar com base na idade informada pelo usuário.
+ *
+ * Analisa a idade para determinar se a pessoa pode ou não votar e atualiza o conteúdo do elemento com id "resultado".
+ * Exibe mensagens diferentes dependendo da faixa etária.
+ *
  * @returns {undefined}
  */
 function verificarAptidao() {
@@ -54,15 +54,11 @@ function verificarAptidao() {
   resultado.textContent = mensagem;
 }
 
-
 /**
- * Cria entradas de formulário para cadastro de alunos e suas notas.
- * 
- * Adiciona ao elemento com id "alunos" um conjunto de 5 divisões, 
- * cada uma contendo campos de entrada para o nome do aluno e 
- * três notas. Os ids dos campos de entrada são gerados dinamicamente 
- * para cada aluno, permitindo a identificação individual.
- * 
+ * Gera entradas de formulário para cadastro de 5 alunos e suas respectivas notas.
+ *
+ * Dynamicamente adiciona no elemento com ID `alunos` entradas HTML para capturar dados.
+ *
  * @returns {undefined}
  */
 function criarAlunos() {
@@ -83,12 +79,9 @@ function criarAlunos() {
 }
 
 /**
- * Calcula e exibe as médias das notas de alunos cadastrados.
+ * Calcula as médias das notas dos alunos e exibe os resultados.
  *
- * Para cada aluno, três notas são obtidas e a média é calculada.
- * As médias individuais e a média geral da turma são exibidas no
- * elemento com id "resultados". Uma animação de carregamento é
- * apresentada antes do cálculo.
+ * Analisa as notas dos alunos, calcula a média individual e a média da turma, e exibe os resultados no elemento "resultados".
  *
  * @returns {undefined}
  */
@@ -118,17 +111,15 @@ function calcularMedias() {
   }, 1000);
 }
 
-
 /**
- * Calcula o valor final após aplicar um desconto baseado no valor inicial.
+ * Calcula o valor final após aplicar um desconto percentual no preço.
  *
- * Obtém o valor inicial a partir do campo de entrada com id "valorInicial"
- * e aplica um desconto percentual conforme a faixa do valor:
+ * Apresenta uma análise de desconto com base no valor inicial:
  * - 10% para valores até R$ 100
  * - 20% para valores entre R$ 101 e R$ 500
  * - 30% para valores acima de R$ 500
  *
- * O resultado é exibido no elemento com id "resultadoDesconto".
+ * Atualiza o elemento com ID `resultadoDesconto`.
  *
  * @returns {undefined}
  */
@@ -148,13 +139,11 @@ function calcularDesconto() {
   ).innerText = `🪄 O valor final com desconto é: R$ ${desconto.toFixed(2)}`;
 }
 
-
 /**
- * Calcula o Índice de Massa Corporal (IMC) com base no peso e altura fornecidos.
+ * Calcula o Índice de Massa Corporal (IMC) baseado em peso e altura.
  *
- * Obtém o peso e altura dos campos de entrada correspondentes, calcula o IMC
- * e determina a classificação de peso (abaixo da média, saudável, acima da média).
- * Em seguida, exibe o resultado no elemento com id "resultadoIMC".
+ * Analisa as informações de peso e altura fornecidas pelo usuário,
+ * calcula o IMC e classifica conforme as faixas recomendadas.
  *
  * @returns {undefined}
  */
@@ -184,29 +173,35 @@ function calcularIMC() {
   )} - ${classificacao}`;
 }
 
-
 /**
- * Executa o exercício 6.
+ * Executa o exercício 6: Manipulação de Arrays.
  *
- * Mostra o array inicial, o maior e menor valor, o array
- * após adicionar um sexto valor e a média dos valores.
+ * - Exibe o array inicial.
+ * - Identifica o maior e menor valor no array.
+ * - Adiciona um sexto valor ao array.
+ * - Calcula a soma e a média dos números no array atualizado.
+ *
+ * Atualiza o elemento com id "resultadoExercicio6" com as informações processadas.
  *
  * @returns {undefined}
  */
 function executarExercicio6() {
   const resultadoDiv = document.getElementById("resultadoExercicio6");
 
+  // Array inicial com 5 elementos
   let numeros = [12, 5, 8, 22, 17];
   let resultado = `<p><strong>Array Inicial:</strong> [${numeros.join(
     ", "
   )}]</p>`;
 
+  // Calcular o maior e menor valor no array
   const maior = Math.max(...numeros);
   const menor = Math.min(...numeros);
 
   resultado += `<p><strong>Maior Valor:</strong> ${maior}</p>`;
   resultado += `<p><strong>Menor Valor:</strong> ${menor}</p>`;
 
+  // Adicionar o sexto valor ao array
   const sextoValor = 30;
   numeros.push(sextoValor);
 
@@ -214,10 +209,12 @@ function executarExercicio6() {
     ", "
   )}]</p>`;
 
+  // Calcular a soma dos elementos do array
   const soma = numeros.reduce((total, num) => total + num, 0);
   const media = soma / numeros.length;
 
   resultado += `<p><strong>Média dos valores:</strong> ${media.toFixed(2)}</p>`;
 
+  // Exibir no DOM
   resultadoDiv.innerHTML = resultado;
 }
