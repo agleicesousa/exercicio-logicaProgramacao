@@ -1,56 +1,60 @@
-document.addEventListener("DOMContentLoaded", criarAlunos);
+document.addEventListener("DOMContentLoaded", () => {
+  criarAlunos();
+});
 
+/** Exercício 1: Alterando Títulos */
 function alterarTitulo() {
   const inputTitulo = document.getElementById("inputTitulo").value.trim();
   const titulo = document.getElementById("titulo");
 
   if (inputTitulo) {
-    titulo.textContent = `${inputTitulo} ✨✨✨ (com um toque de magia!)`;
-    alert("🎨 Título transformado! Prepare-se para a mágica!");
+    titulo.textContent = `${inputTitulo} ✨✨✨ (com um toque de criatividade!)`;
+    alert("🎨 Título transformado com estilo!");
   } else {
-    alert("Vamos lá! Adicione um toque de criatividade no título! 🖌️");
+    alert("✏️ Vamos lá! Insira algo criativo no título!");
   }
 }
 
+/** Exercício 2: Verificando aptidão para votar */
 function verificarAptidao() {
   const nome = document.getElementById("nome").value.trim();
   const idade = parseInt(document.getElementById("idade").value);
   const resultado = document.getElementById("resultado");
 
   if (!nome || isNaN(idade) || idade <= 0) {
-    resultado.textContent = "⚠️ Informações inválidas. Tente novamente!";
+    resultado.textContent = "⚠️ Dados inválidos. Tente novamente!";
     return;
   }
 
   let mensagem = `${nome}, com ${idade} anos, você `;
-
   if (idade < 16) {
-    mensagem += "ainda não pode votar, mas o futuro é seu! 🚀";
+    mensagem += "ainda não pode votar, mas o futuro está a seu favor! 🚀";
   } else if (idade >= 16 && idade <= 18) {
     mensagem += "pode votar, mas é opcional! 💡";
   } else if (idade > 70) {
     mensagem += "pode votar, mas é opcional! 🌟";
   } else {
-    mensagem += "está apto(a) a votar! ✅";
+    mensagem += "está apto(a) para votação! ✅";
   }
 
   resultado.textContent = mensagem;
 }
 
+/** Exercício 3: Criar Alunos e Calcular Médias */
 function criarAlunos() {
   const alunosDiv = document.getElementById("alunos");
   alunosDiv.innerHTML = "";
 
   for (let i = 0; i < 5; i++) {
     alunosDiv.innerHTML += `
-      <div>
-        🎓 Aluno ${i + 1}: Nome: 
-        <input type="text" id="nome${i}" />
-        Nota 1: <input type="number" id="nota1_${i}" />
-        Nota 2: <input type="number" id="nota2_${i}" />
-        Nota 3: <input type="number" id="nota3_${i}" />
-      </div>
-    `;
+        <div>
+          🎓 Aluno ${i + 1}: Nome: 
+          <input type="text" id="nome${i}" />
+          Nota 1: <input type="number" id="nota1_${i}" />
+          Nota 2: <input type="number" id="nota2_${i}" />
+          Nota 3: <input type="number" id="nota3_${i}" />
+        </div>
+      `;
   }
 }
 
@@ -80,6 +84,7 @@ function calcularMedias() {
   }, 1000);
 }
 
+/** Exercício 4: Calculadora de Descontos */
 function calcularDesconto() {
   const valorInicial = parseFloat(
     document.getElementById("valorInicial").value
@@ -96,6 +101,7 @@ function calcularDesconto() {
   ).innerText = `🪄 O valor final com desconto é: R$ ${desconto.toFixed(2)}`;
 }
 
+/** Exercício 5: Calculadora de IMC */
 function calcularIMC() {
   const peso = parseFloat(document.getElementById("peso").value);
   const altura = parseFloat(document.getElementById("altura").value);
@@ -120,4 +126,34 @@ function calcularIMC() {
   document.getElementById("resultadoIMC").innerText = `🔍 IMC: ${imc.toFixed(
     2
   )} - ${classificacao}`;
+}
+
+/** Exercício 6: Manipulação com Arrays */
+function executarExercicio6() {
+  const resultadoDiv = document.getElementById("resultadoExercicio6");
+
+  let numeros = [12, 5, 8, 22, 17];
+  let resultado = `<p><strong>Array Inicial:</strong> [${numeros.join(
+    ", "
+  )}]</p>`;
+
+  const maior = Math.max(...numeros);
+  const menor = Math.min(...numeros);
+
+  resultado += `<p><strong>Maior Valor:</strong> ${maior}</p>`;
+  resultado += `<p><strong>Menor Valor:</strong> ${menor}</p>`;
+
+  const sextoValor = 30;
+  numeros.push(sextoValor);
+
+  resultado += `<p><strong>Array após adicionar um sexto valor:</strong> [${numeros.join(
+    ", "
+  )}]</p>`;
+
+  const soma = numeros.reduce((total, num) => total + num, 0);
+  const media = soma / numeros.length;
+
+  resultado += `<p><strong>Média dos valores:</strong> ${media.toFixed(2)}</p>`;
+
+  resultadoDiv.innerHTML = resultado;
 }
